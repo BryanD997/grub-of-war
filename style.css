@@ -1,0 +1,179 @@
+/* General estilo terminal */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #0f0;
+}
+
+/* Encabezado con logo a la par */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  border-bottom: 2px solid #0f0;
+}
+
+header .logo {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #0f0;
+}
+
+header .text-header {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 { font-size: 2.5rem; margin: 0; }
+header p { font-size: 1.2rem; margin: 5px 0 0 0; }
+
+/* Video */
+#video-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+#video-section iframe {
+  width: 80%;
+  max-width: 800px;
+  height: 400px;
+  border: 2px solid #0f0;
+  border-radius: 10px;
+}
+
+/* Introducción */
+#introduccion {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 2px solid #0f0;
+}
+
+#introduccion h2 { font-size: 2rem; margin-bottom: 10px; }
+
+/* Sección Charla / Evento */
+#evento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #0f0;
+  background-color: #111;
+}
+
+#evento h2 { font-size: 2rem; margin-bottom: 20px; }
+
+#evento p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Carrusel */
+.carrusel {
+  width: 80%;
+  margin: 40px auto 10px auto;
+  overflow: hidden;
+  border: 2px solid #0f0;
+  border-radius: 10px;
+  position: relative;
+  background-color: #111;
+}
+
+.carrusel .imagenes { display: flex; transition: transform 0.5s ease-in-out; }
+
+.carrusel img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background-color: #000;
+  padding: 20px;
+}
+
+.carrusel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: #0f0;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.carrusel .prev { left: 10px; }
+.carrusel .next { right: 10px; }
+
+.dots { text-align: center; margin-top: 10px; }
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #444;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active { background-color: #0f0; }
+
+/* Canva */
+#canva-section {
+  width: 80%;
+  margin: 40px auto;
+  border: 2px solid #0f0;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #111;
+}
+
+.canva-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.canva-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #0f0;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header { flex-direction: column; text-align: center; gap: 15px; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
+  #introduccion h2, #evento h2 { font-size: 1.5rem; }
+  .carrusel { width: 95%; }
+  .carrusel img { max-height: 250px; padding: 10px; }
+  #video-section iframe, .canva-container { width: 95%; height: 250px; }
+}
